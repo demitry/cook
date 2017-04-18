@@ -60,6 +60,7 @@ syntax: glob
 bin
 
 # IDEA
+.idea/*
 /.idea
 /.idea_modules
 
