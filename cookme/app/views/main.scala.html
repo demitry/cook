@@ -11,14 +11,10 @@
     <head>
         @* Here's where we render the page title `String`. *@
         <title>@title</title>
-        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
-        <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">
 
         <!--Bootstrap 4 needs Tether-->
-
         <script type='text/javascript'
                 src='@routes.Assets.at("tether/tether.min.js")'></script>
-
         <script type='text/javascript'
                 src='@routes.Assets.at("jquery/jquery-3.2.1.js")'></script>
         <link rel="stylesheet"
@@ -26,13 +22,16 @@
         <script type='text/javascript'
                 src='@routes.Assets.at("bootstrap/js/bootstrap.js")'></script>
 
+        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">
+
     </head>
     <body>
         @* And here's where we render the `Html` object containing
          * the page content. *@
         @content
 
-        <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+        <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse main-navigation-bar">
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
