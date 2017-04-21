@@ -18,4 +18,11 @@ public class HomeController extends Controller {
         return ok(views.html.index.render());
     }
 
+    public Result hello() { return ok("Hello World"); }
+
+    public Result echo(String msg) { return ok("Echoing " + msg); }
+
+    public Result helloRedirect() {
+        return redirect(routes.HomeController.echo("HelloWorldv2"));
+    }
 }
