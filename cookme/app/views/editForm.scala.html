@@ -1,0 +1,26 @@
+@(id: Long, ingredientForm: Form[Ingredient])
+
+@import helper._
+
+@import b3.vertical.fieldConstructor  // Declares a vertical field constructor as default
+
+<h1>Edit ingredient</h1>
+
+@b3.form(routes.HomeController.update(id)) {
+
+    <fieldset>
+
+        @b3.text(ingredientForm("name"), '_label -> "Ingredient name", '_help -> "")
+
+    </fieldset>
+
+    <div class="actions">
+        <input type="submit" value="Save this Ingredient" class="btn primary"> or
+        <a href="@routes.HomeController.list()" class="btn">Cancel</a>
+    </div>
+
+}
+
+@b3.form(routes.HomeController.delete(id), 'class -> "topRight") {
+    <input type="submit" value="Delete this ingredient" class="btn danger">
+}

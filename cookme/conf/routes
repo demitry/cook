@@ -12,3 +12,20 @@ GET     /v2/hello                   controllers.HomeController.helloRedirect()
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+# Computers list (look at the default values for pagination parameters)
+GET     /ingredients                  controllers.HomeController.list(p:Int ?= 0, s ?= "name", o ?= "asc", f ?= "")
+
+# Add ingredient
+GET     /ingredients/new              controllers.HomeController.create()
+POST    /ingredients                  controllers.HomeController.save()
+
+# Edit existing ingredient
+GET     /computers/:id              controllers.HomeController.edit(id:Long)
+POST    /computers/:id              controllers.HomeController.update(id:Long)
+
+# Delete an ingredient
+POST    /ingredients/:id/delete       controllers.HomeController.delete(id:Long)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)

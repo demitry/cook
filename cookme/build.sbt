@@ -9,7 +9,11 @@ scalaVersion := "2.11.8"
 
 libraryDependencies += filters
 
+libraryDependencies += "com.adrianhurt" %% "play-bootstrap" % "1.0-P25-B3"
+
 libraryDependencies ++= Seq(
-  jdbc,
+  jdbc, javaJpa, cache, evolutions,
   "mysql" % "mysql-connector-java" % "5.1.28"
 )
+
+lazy val myProject = (project in file(".")).enablePlugins(PlayJava, PlayEbean)

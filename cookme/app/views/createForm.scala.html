@@ -1,0 +1,20 @@
+@(cform: Form[Ingredient])
+
+@import helper._
+
+@import b3.vertical.fieldConstructor
+
+<h1>Add an Ingredient</h1>
+
+@b3.form(routes.HomeController.save()) {
+
+        <fieldset>
+            @b3.text(cform("name"), '_label -> "name", '_help -> "")
+
+        </fieldset>
+
+        <div class="actions">
+            <input type="submit" value="Create this ingredient" class="btn primary"> or
+            <a href="@routes.HomeController.list()" class="btn">Cancel</a>
+        </div>
+}
